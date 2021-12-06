@@ -1,0 +1,22 @@
+{%extends 'djHtmlBase.html'%} {%block conteudo%}
+<h1 class="mt-5">{{HtmlContato.nome}} {{HtmlContato.sobreNome}}</h1>
+<dl>
+  <dt>ID</dt>
+  <dd>{{HtmlContato.id}}</dd>
+
+  <dt>Telefone</dt>
+  <dd>{{HtmlContato.telefone}}</dd>
+
+  <dt>E-mail</dt>
+  <dd>{{HtmlContato.email}}</dd>
+
+  <dt>Data criação</dt>
+  <dd>{{HtmlContato.data_criacao|date:'d/m/Y H:i:s'}}</dd>
+
+  <dt>Categoria</dt>
+  <dd>{{HtmlContato.categoria}}</dd>
+
+  <dt>Descrição</dt>
+  <dd>{{HtmlContato.descricao}}</dd>
+</dl>
+{%endblock%}

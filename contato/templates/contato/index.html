@@ -1,0 +1,41 @@
+{%extends 'djHtmlBase.html'%} {%block conteudo%}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Sobrenome</th>
+      <th>Telefone</th>
+      <th>Categoria</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for contato in HtmlContatos %} 
+      {%if contato.exibir%}
+      <tr>
+        <td>
+          <a href="{%url 'exibeContato' contato.id%}">{{contato.nome}}</a>
+        </td>
+        <td>{{contato.sobreNome}}</td>
+        <td>{{contato.telefone}}</td>
+        <td>{{contato.categoria}}</td>
+      </tr>
+      {%endif%} 
+    {%endfor%}
+  </tbody>
+</table>
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    {%for pagina in HtmlContatos.paginator.page_range%}
+      {%if HtmlContatos.number == pagina%}
+        <li class="page-item active">
+          <a class="page-link" href="?p={{pagina}}">{{pagina}}</a>
+        </li>
+      {%else%}
+        <li class="page-item">
+          <a class="page-link" href="?p={{pagina}}">{{pagina}}</a>
+        </li>
+      {%endif%}
+    {%endfor%}
+  </ul>
+</nav>
+{%endblock%}

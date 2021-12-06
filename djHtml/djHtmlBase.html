@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    {% include 'estrutura/djHead.html' %}
+    <title>Agenda</title>
+  </head>
+  <body>
+    <!-- Navigation -->
+    {% include 'estrutura/djNavMenu.html'%}
+    <!-- Page Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1 class="mt-5">Minha agenda</h1>
+          {%block conteudo%} {%endblock%}
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'vendor/jquery/jquery.slim.min.js' %}"></script>
+    <!--C:/xampp/htdocs/projeto/python/_Desen/djAgendaContato/djHtml/static/vendor/jquery/jquery.slim.min.js-->
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>
